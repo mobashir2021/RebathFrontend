@@ -1,0 +1,38 @@
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: #013d33 !important;
+    border-radius: 0px  !important;
+    height:120px;
+    font-size: 30px;
+}
+
+.maindiv{
+    width: 90%; 
+    height: 100vh; 
+    background-color: rgb(242, 242, 242);
+}
+
+.matcardclass{
+    background-color:rgb(238, 238, 238);
+    color: black;
+}
+
+.imgclass{
+    width: 90%;
+    height: 55vh;
+}
+
+.leftbutton{
+    text-align: center;
+}
+
+.rightbutton{
+    text-align: center;
+}
+
+.matbut{
+    background-color:crimson;
+    color: whitesmoke;
+    font-size: 35px;
+    border: none;
+}
+

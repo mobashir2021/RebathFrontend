@@ -1,0 +1,166 @@
+<div  class="container-fluid maindiv">
+    <mat-card class="matcardclass"  >
+        <mat-card-header>
+            <div mat-card-avatar></div>
+            <mat-card-title>
+              
+            </mat-card-title>
+            
+          </mat-card-header>
+          <div mat-card-image>
+              <div class="row">
+                <div class="col-md-6 col-xl-6 col-lg-6" style="float: left;">
+                    <img src="../../../assets/img/logo.png" width=150 height=75 />
+                </div>
+                <div class="col-md-6 col-xl-6 col-lg-6" >
+                    
+                    
+                </div>
+              </div>
+              
+            </div>
+          <mat-card-content>
+            <p-treeTable [value]="this.treestruct" [scrollable]="true" (onEditComplete)="onEdit($event)">
+              <ng-template pTemplate="header">
+                
+                  <tr>
+                    <th>Items</th>
+                    <th>Price</th>
+                    <th>Unit Of Measure</th>
+                    <th>Min Quantity</th>
+                    <th>Quantity</th>
+                    <th>Bath1</th>
+                    <th>Bath2</th>
+                    <th>Note For Rep</th>
+                    <th>Final Price</th>
+                    <th>Discount</th>
+                    <th>Discounted Price</th> 
+                    <th>Misc</th> 
+                  </tr>
+              </ng-template>
+              <ng-template pTemplate="body" let-rowNode let-rowData="rowData" let-rowIndex="rowIndex">
+                  <tr [ttRow]="rowNode" style="height:55px; " [ngStyle]="{'background-color': rowData.ParentID == '' ? '#ff6666' : 'antiquewhite'}">
+                      <td [ngStyle]="{'border': rowData.ParentID == '' ? 'none' : '1px solid black' }">
+                          <p-treeTableToggler [rowNode]="rowNode"></p-treeTableToggler>
+                          {{rowData['Items']}}
+                          
+
+                      </td>
+                      <td [ngStyle]="{'border': rowData.ParentID == '' ? 'none' : '1px solid black' }">
+                        {{rowData['Price']}}
+                      </td>
+                      <!-- <td [ngStyle]="{'width':'90px'}">{{rowData.UnitOfMeasure}}</td> -->
+                      <td [ngStyle]="{'border': rowData.ParentID == '' ? 'none' : '1px solid black' }">
+                        {{rowData['UnitOfMeasure']}}
+                        
+                      </td>
+                      <td [ngStyle]="{'border': rowData.ParentID == '' ? 'none' : '1px solid black' }">
+                        {{rowData['MinQuantity']}}
+                        
+                      </td>
+                      <td [ttEditableColumn]="rowData.Quantity" [ttEditableColumnField]="rowData.Quantity" [ngStyle]="{'border': rowData.ParentID == '' ? 'none' : '1px solid black' }">
+                        <p-treeTableCellEditor>
+                          <ng-template pTemplate="input">
+                              <input pInputText type="text" [(ngModel)]="rowData['Quantity']" (click)="onClicked(rowData)">
+                          </ng-template>
+                          <ng-template pTemplate="output">{{rowData['Quantity']}}</ng-template>
+                        </p-treeTableCellEditor>
+                        
+                      </td>
+                      <td [ttEditableColumn]="rowData.Bath1" [ttEditableColumnField]="rowData.Bath1" (click)="onClicked(rowData)" [ngStyle]="{'border': rowData.ParentID == '' ? 'none' : '1px solid black' }">
+                        <p-treeTableCellEditor>
+                          <ng-template pTemplate="input">
+                              <input pInputText type="text" [(ngModel)]="rowData['Bath1']">
+                          </ng-template>
+                          <ng-template pTemplate="output">{{rowData['Bath1']}}</ng-template>
+                        </p-treeTableCellEditor>
+                        
+                      </td>
+                      <td [ttEditableColumn]="rowData.Bath2" [ttEditableColumnField]="rowData.Bath2" (click)="onClicked(rowData)" [ngStyle]="{'border': rowData.ParentID == '' ? 'none' : '1px solid black' }">
+                        <p-treeTableCellEditor>
+                          <ng-template pTemplate="input">
+                              <input pInputText type="text" [(ngModel)]="rowData['Bath2']">
+                          </ng-template>
+                          <ng-template pTemplate="output">{{rowData['Bath2']}}</ng-template>
+                        </p-treeTableCellEditor>
+                        
+                      </td>
+                      <td [ttEditableColumn]="rowData.NoteForRep" [ttEditableColumnField]="rowData.NoteForRep" (click)="onClicked(rowData)" [ngStyle]="{'border': rowData.ParentID == '' ? 'none' : '1px solid black' }">
+                        <p-treeTableCellEditor>
+                          <ng-template pTemplate="input">
+                              <input pInputText type="text" [(ngModel)]="rowData['NoteForRep']">
+                          </ng-template>
+                          <ng-template pTemplate="output">{{rowData['NoteForRep']}}</ng-template>
+                        </p-treeTableCellEditor>
+                        
+                      </td>
+                      <td [ngStyle]="{'border': rowData.ParentID == '' ? 'none' : '1px solid black' }">
+                        
+                          {{rowData['FinalPrice']}}
+                        
+                        
+                      </td>
+                      <td [ttEditableColumn]="rowData.Discount" [ttEditableColumnField]="rowData.Discount" [ngStyle]="{'border': rowData.ParentID == '' ? 'none' : '1px solid black' }">
+                        <p-treeTableCellEditor>
+                          <ng-template pTemplate="input">
+                              <input pInputText type="text" [(ngModel)]="rowData['Discount']" (click)="onClicked(rowData)">
+                          </ng-template>
+                          <ng-template pTemplate="output">{{rowData['Discount']}}</ng-template>
+                        </p-treeTableCellEditor>
+                        
+                      </td>
+                      <td [ngStyle]="{'border': rowData.ParentID == '' ? 'none' : '1px solid black' }">
+                        {{rowData['DiscountedPrice']}}
+                        
+                      </td> 
+                      <td [ttEditableColumn]="rowData.Misc" [ttEditableColumnField]="rowData.Misc" (click)="onClicked(rowData)" [ngStyle]="{'border': rowData.ParentID == '' ? 'none' : '1px solid black' }">
+                        <p-treeTableCellEditor>
+                          <ng-template pTemplate="input">
+                              <input pInputText type="text" [(ngModel)]="rowData['Misc']">
+                          </ng-template>
+                          <ng-template pTemplate="output">{{rowData['Misc']}}</ng-template>
+                        </p-treeTableCellEditor>
+                        
+                      </td>
+                  </tr>
+              </ng-template>
+          </p-treeTable>
+            
+          </mat-card-content>
+          <mat-card-actions>
+            
+
+            
+            
+            
+            
+          </mat-card-actions>
+        </mat-card>
+
+        <div style="height:200px;">
+                
+        </div>
+
+        <footer class="fixed-bottom" style="height: 60px; background-color: cornsilk;">
+          <div class="row" style="padding-top: 5px;">
+            <div class="col-md-6 col-xl-6 col-lg-6" >
+
+            </div>
+            <div class="col-md-6 col-xl-6 col-lg-6" >
+              <div style="text-align: center; padding-right: 2%;">
+                  <!-- <button class="matbut" style="margin-right:3px;" mat-button>Import</button> -->
+                  
+                  <button class="btn btn-danger btn-lg" style="margin-right:2px;" (click)="next()" mat-button>Finalize</button>
+                  <button class="btn btn-danger btn-lg" (click)="cancel()" mat-button>Cancel</button>
+              </div>
+              
+          </div>
+          </div>
+          
+        </footer>
+
+
+
+</div>
+
+

@@ -1,0 +1,52 @@
+::ng-deep .custommodal{
+    background-color: white !important;
+    color:black;
+    padding-top: 30px;
+    padding-left: 50px;
+    
+}
+.backdropBackground{
+    background-color:white !important;
+    color:black;
+    
+}
+::ng-deep .my-dialog mat-dialog-container{
+    
+    background-color: white !important;
+        padding: 0px;
+        width: 100%;
+        height:100%;
+    
+}
+
+::ng-deep .p-fileupload-buttonbar{
+    background-color:crimson;
+    color:white !important;
+    width: 100px;
+    height: 45px;
+    /* width: 100px;
+    height:45px; */
+}
+
+::ng-deep .p-fileupload-files{
+    /* display:none; */
+    margin-left: -30px;
+    width: 100%;
+    height:110px;
+    border: 1px solid black;
+}
+
+::ng-deep .p-button{
+    background-color:crimson;
+    color:white !important;
+    width: 100px;
+    height: 45px;
+    /* width: 100px;
+    height:45px; */
+}
+
+::ng-deep .liclass{
+    
+    color:black !important;
+    
+}

@@ -1,0 +1,95 @@
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:visited {
+    background-color: #013d33 !important;
+}
+
+.mat-card:not([class*=mat-elevation-z]) {
+    box-shadow: 0 3px 2px -1px rgba(219, 195, 193, 1), 0 2px 2px 0 rgba(219, 195, 193, 1), 0 2px 4px 0 rgba(219, 195, 193, 1);
+}
+
+.maindiv {
+    width: 90%;
+    height: 100vh;
+    /* background-color: rgb(242, 242, 242); */
+}
+
+.matcardclass {
+    background-color: rgb(238, 238, 238);
+    color: black;
+}
+
+.matcardcontent {
+    padding: 0px !important;
+    margin: 0px !important;
+}
+
+.imgclass {
+    width: 100%;
+    height: 55vh;
+    padding: 0px;
+    margin: 0px;
+    box-shadow: 0 9px 8px -7px rgba(219, 195, 193, 1), 0 8px 8px 0 rgba(219, 195, 193, 1), 0 8px 9px 0 rgba(219, 195, 193, 1);
+}
+
+.leftbutton {
+    text-align: center;
+}
+
+.rightbutton {
+    text-align: center;
+}
+
+.matbut {
+    background-color: crimson;
+    color: whitesmoke;
+    font-size: 35px;
+    border: none;
+}
+
+
+/* Home Page Design */
+
+.login_section {
+    width: 100%;
+    height: calc(100vh - 5px);
+    position: relative;
+    overflow-x: hidden;
+    background-image: url('../../../assets/img/login-page.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    align-items: center;
+    z-index: 2;
+}
+
+.login_card {
+    width: 400px;
+    margin: 0px auto;
+    text-align: center;
+    z-index: 2;
+}
+
+.login_section:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #0000007a;
+    z-index: 1;
+}
+
+.login_center {
+    width: 100%;
+    max-width: 200px;
+}
+
+.login_card h5 {
+    margin: 20px auto;
+    font-size: 16px;
+    color: #212020;
+    letter-spacing: .5px;
+}

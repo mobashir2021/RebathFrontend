@@ -1,0 +1,100 @@
+ 
+<nav class="top_navigation">
+    <div class="container">
+        <div class="logo_block">
+            <img src="../../../assets/img/logo.png" />
+        </div>
+        <font style=" font-size: 24px;       
+        margin-left: 23%;
+        font-weight: bold;
+        color: #af2525;;">Design to Done</font>   
+
+        <ul class="nav_buttons">
+           <!--  <li class="bg-info text-white" routerLink="/customerinfo">Registration</li>
+            <li class="btn bg-primary text-white" routerLink="/wetareas">Wet Area</li>
+            <li class="btn bg-warning text-white" routerLink="/phase2items">Phase 2</li> -->
+            <li class="btn bg-danger text-white" routerLink="/">Logout</li>
+        </ul>
+    </div>
+</nav>
+<div class="inner_block">
+    <div class="container">
+        <div class="ragistration_section">
+            <div class="header_form">Customer Information</div>
+            <div class="card">
+                <div class="card-body">
+                    <form class="ragis_form">
+                        <div class="row">
+                            <div class="col-md-6 col-xl-6 col-lg-6">
+                                <div class="form-group">
+                                    <label for="customername">Customer Name</label>
+                                    <input type="text" class="form-control" [ngModelOptions]="{standalone: true}" required [(ngModel)]="customername" id="customername" placeholder="Enter Customer name">
+                                    <span style="color: red;" *ngIf="s1"> This Field is required </span>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xl-6 col-lg-6">
+                                <div class="form-group">
+                                    <label for="customeremail">Customer Email</label>
+                                    <input type="email" email class="form-control" [ngModelOptions]="{standalone: true}" [(ngModel)]="customeremail" id="customeremail" placeholder="Enter Customer Email" >
+                                    <span style="color: red;" *ngIf="s2"> This Field is required </span>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xl-6 col-lg-6">
+                                <div class="form-group">
+                                    <label for="address">Address</label>
+                                    <input type="text" class="form-control" [ngModelOptions]="{standalone: true}" [(ngModel)]="address" id="address" placeholder="Enter Address">
+                                    <span style="color: red;" *ngIf="s3"> This Field is required </span>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xl-6 col-lg-6">
+                                <div class="form-group">
+                                    <label for="customerphone">Customer Phone#</label>
+                                    <input type="text" class="form-control" [ngModelOptions]="{standalone: true}" [(ngModel)]="customerphone" id="customerphone" placeholder="Enter Customer Phone">
+                                    <span style="color: red;" *ngIf="s4"> This Field is required </span>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xl-6 col-lg-6">
+                                <div class="form-group">
+                                    <label for="locationdata">Location</label>
+                                    <!-- <input type="text" class="form-control" [ngModelOptions]="{standalone: true}" [(ngModel)]="locationdata" id="locationdata" placeholder="Enter Location"> -->
+                                    <select class="form-control" [ngModelOptions]="{standalone: true}" [(ngModel)]="locationdata" id="locationdata">
+                                        <option value="San Antonio">San Antonio</option>
+                                        <option value="Corpus Christi">Corpus Christi</option>
+                                        <option value="Rio Granade Valley">Rio Granade Valley</option>
+                                    </select>
+                                    <span style="color: red;" *ngIf="s5"> This Field is required </span>
+
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xl-6 col-lg-6">
+                                <div class="form-group">
+                                    <label for="designcons">Design Consultant</label>
+                                    <input type="text" class="form-control" [ngModelOptions]="{standalone: true}" [(ngModel)]="designcons" id="designcons" placeholder="Enter Design Consultant name">
+                                    <span style="color: red;" *ngIf="s6"> This Field is required </span>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xl-6 col-lg-6">
+                                <div class="form-group">
+                                    <label for="designconsemail">Design Consultant Email</label>
+                                    <input email type="email" class="form-control" [ngModelOptions]="{standalone: true}" [(ngModel)]="designconsemail" id="designconsemail" placeholder="Enter Design Consultant email" > 
+                                    <span style="color: red;" *ngIf="s7"> This Field is required </span>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xl-6 col-lg-6">
+                                <div class="form-group">
+                                    <label for="datepass">Date</label>
+                                    <input type="date" [ngModelOptions]="{standalone: true}" [(ngModel)]="datepass" class="form-control" id="datepass"    placeholder="Enter Date">
+                                    <span style="color: red;" *ngIf="s8"> This Field is required </span>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="form_footer text-right">
+                    <button class="btn btn-danger mr-3" (click)="next()" mat-button>Next</button>
+                    <button class="btn btn-outline-danger" (click)="cancel()" mat-button>Clear</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

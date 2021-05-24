@@ -1,0 +1,110 @@
+@media all and (min-width: 768px) {
+    tr td {
+        vertical-align: middle !important;
+    }
+    tr span:not([class]) {
+        padding: 1rem 1rem;
+    }
+}
+
+@media print {
+    /* .matcardclass {
+        transition: none !important;
+        box-shadow: none !important;
+        background: white;
+    } */
+    .printdata {
+        border: none !important;
+    }
+}
+
+
+
+
+.botom {
+    height: 100px;
+    background-color: rgb(238, 238, 238);
+    box-shadow: 9px 9px 8px 9px rgb(120, 120, 120, 1), 9px 8px 8px 9px rgba(120, 120, 120, 1), 9px 8px 9px 9px rgba(120, 120, 120, 1);
+}
+
+span {
+    color: black;
+}
+
+.mattitle {
+    align-items: center;
+}
+
+
+/* div.maindiv{
+    
+        
+        overflow: scroll;
+      
+} */
+
+
+/* mat-card {
+    transition: none !important;
+    box-shadow: none !important;
+    background-color: white;
+} */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid black;
+    margin: 1em 0;
+    padding: 0;
+}
+
+.matcardclass {
+    border: none !important;
+    background: white;
+}
+.aligncenter {
+  text-align: center;
+}
+
+.m-signature-pad {
+    font-size: 12px;
+    width: auto;
+    margin-bottom: 20px;
+}
+
+.maindiv {
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+}
+
+.matcardclass {
+    background-color: rgb(255, 255, 255);
+    color: black;
+    padding: 0px;
+    height: auto;
+}
+
+.imgclass {
+    width: 90%;
+    height: 55vh;
+}
+
+.leftbutton {
+    text-align: center;
+}
+
+.rightbutton {
+    text-align: center;
+}
+
+.matbut {
+    background-color: crimson;
+    color: whitesmoke;
+    font-size: 24px;
+    border: none;
+}
+
+.matbutfile {
+    border: none;
+}

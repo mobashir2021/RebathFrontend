@@ -1,0 +1,277 @@
+<nav class="top_navigation">
+  <div class="container">
+      <div class="logo_block">
+          <img src="../../../assets/img/logo.png" />
+      </div>
+       <ul class="nav_buttons   text-right" >         
+          <li class="btn bg-warning text-white" (click)="phasearea()">Phase 2</li> 
+          <li class="btn bg-danger text-white" routerLink="/home" > Logout </li>
+        
+      </ul>
+  </div>
+</nav>
+<section class="inner_block">
+  <div class="container-fluid" style="margin-bottom: 70px;">
+      <div class="table_section">
+          <div class="header_form">WET AREAS PACKAGES AND ACCESSORIES</div>
+          <div class="inner_table_block">
+              <p-treeTable [columns]="cols" class="pretable_class" [value]="this.treestruct" [scrollable]="true" [resizableColumns]="true" [autoLayout]="true" (onEditComplete)="onEdit($event)">
+                  <ng-template pTemplate="colgroup" let-columns>
+                      <colgroup>
+                          <col *ngFor="let col of columns" [style.width]="col.width">
+                      </colgroup>
+                  </ng-template>
+                  <ng-template pTemplate="header" let-columns>
+                      <tr>
+                          <th *ngFor="let col of columns" ttResizableColumn style="background-color:  #282C35;   padding: 4px !important;      color: white; text-align: center;border-left: 2px solid black; border-right: 2px solid black;">
+                              {{col.header}}
+                          </th>
+                      </tr>
+                  </ng-template>
+                  <ng-template pTemplate="body" let-rowNode let-rowData="rowData" let-rowIndex="rowIndex">
+                      <tr  [ttRow]="rowNode" style="height:35px; " [ngClass]="{'row-accessories': 0 === rowData['tempid'] % 2}" >
+                    
+                          <td   >
+                            <!-- <p-treeTableToggler [rowNode]="rowNode"></p-treeTableToggler>
+                            {{rowData['Items']}} -->
+
+
+                            
+                              <div class="row">
+                              <span class="col-3">  <p-treeTableToggler [rowNode]="rowNode"></p-treeTableToggler> </span>
+                         
+                              <span class="col-8">   {{rowData['Items']}}  </span>                            
+                             </div>
+                           
+                                <!-- <p-treeTableToggler [rowNode]="rowNode"></p-treeTableToggler>
+                                <p-treeTableCellEditor>
+                                  <ng-template pTemplate="input">
+                                      <input pInputText type="text" [(ngModel)]="rowData['Items']" >
+                                  </ng-template>
+                                  <ng-template pTemplate="output">{{rowData['Items']}}</ng-template>
+                              </p-treeTableCellEditor> -->
+                                
+                            </td>
+                            <td >
+                              {{rowData['Price']}}
+                              
+                            </td>
+                            <!-- <td [ngStyle]="{'width':'90px'}">{{rowData.UnitOfMeasure}}</td> -->
+                            <td >
+                              {{rowData['UnitOfMeasure']}}
+                              
+                              
+                            </td>
+                            <td >
+                              {{rowData['MinQuantity']}}                              
+                              
+                            </td>
+                            <!-- <td [ttEditableColumn]="rowData.Quantity" [ttEditableColumnField]="rowData.Quantity" (click)="onClicked(rowData)" >
+                              <p-treeTableCellEditor>
+                                <ng-template pTemplate="input">
+                                    <input pInputText type="text" [(ngModel)]="rowData['Quantity']">
+                                </ng-template>
+                                <ng-template pTemplate="output">{{rowData['Quantity']}}</ng-template>
+                              </p-treeTableCellEditor>
+                              
+                            </td> -->
+                            
+                            <td [ttEditableColumn]="rowData.Bath1" [ttEditableColumnField]="rowData.Bath1" (click)="onClicked(rowData)" >
+                              <p-treeTableCellEditor>
+                                <ng-template pTemplate="input">
+                                    <input pInputText type="text" [(ngModel)]="rowData['Bath1']">
+                                </ng-template>
+                                <ng-template pTemplate="output">{{rowData['Bath1']}}</ng-template>
+                              </p-treeTableCellEditor>
+                              
+                            </td>
+                            <td [ttEditableColumn]="rowData.Bath2" [ttEditableColumnField]="rowData.Bath2" (click)="onClicked(rowData)" >
+                              <p-treeTableCellEditor>
+                                <ng-template pTemplate="input">
+                                    <input pInputText type="text" [(ngModel)]="rowData['Bath2']">
+                                </ng-template>
+                                <ng-template pTemplate="output">{{rowData['Bath2']}}</ng-template>
+                              </p-treeTableCellEditor>
+                              
+                            </td>
+                            <td [ttEditableColumn]="rowData.NoteForRep" [ttEditableColumnField]="rowData.NoteForRep" (click)="onClicked(rowData)" >
+                              <p-treeTableCellEditor>
+                                <ng-template pTemplate="input">
+                                    <input pInputText type="text" [(ngModel)]="rowData['NoteForRep']">
+                                </ng-template>
+                                <ng-template pTemplate="output">{{rowData['NoteForRep']}}</ng-template>
+                              </p-treeTableCellEditor>
+                              
+                            </td>
+                            
+                            <td >
+                              {{rowData['FinalPrice']}}
+                              
+                            </td>
+                            <td [ttEditableColumn]="rowData.Discount" [ttEditableColumnField]="rowData.Discount" (click)="onClicked(rowData)" >
+                              <p-treeTableCellEditor>
+                                <ng-template pTemplate="input">
+                                    <input pInputText type="text" [(ngModel)]="rowData['Discount']">
+                                </ng-template>
+                                <ng-template pTemplate="output">{{rowData['Discount']}}</ng-template>
+                              </p-treeTableCellEditor>
+                              
+                            </td>
+                            <td >
+                              {{rowData['DiscountedPrice']}}
+                              
+                            </td> 
+                            <!-- <td [ttEditableColumn]="rowData.Misc" [ttEditableColumnField]="rowData.Misc" (click)="onClicked(rowData)" [ngStyle]="{'border': rowData.ParentID == '' ? 'none' : '1px solid black' }">
+                              <p-treeTableCellEditor>
+                                <ng-template pTemplate="input">
+                                    <input pInputText type="text" [(ngModel)]="rowData['Misc']">
+                                </ng-template>
+                                <ng-template pTemplate="output">{{rowData['Misc']}}</ng-template>
+                              </p-treeTableCellEditor>
+                              
+                            </td> -->
+                        </tr>
+                  </ng-template>
+              </p-treeTable>
+              <p-treeTable [columns]="cols"   [value]="this.treestructAdditonal" [scrollable]="true" [resizableColumns]="true" [autoLayout]="true" (onEditComplete)="onEdit($event)">
+                  <ng-template pTemplate="colgroup" let-columns>
+                    <colgroup>
+                        <col *ngFor="let col of columns" [style.width]="col.width">
+                    </colgroup>
+                </ng-template>
+                <!-- <ng-template pTemplate="header" let-columns >
+                    <tr >
+                        <th  *ngFor="let col of columns" ttResizableColumn 
+                        style="background-color:  #282C35; font-weight: normal; color: white; text-align: center;border-left: 2px solid black; border-right: 2px solid black;">
+                            
+                        </th>
+                    </tr>
+                </ng-template> -->
+                  <ng-template pTemplate="body" let-rowNode let-rowData="rowData" let-rowIndex="rowIndex">
+                    
+                    
+                    <tr  [ttRow]="rowNode" style="height:35px; " [ngClass]="{'row-accessories': 0 === rowData['tempid'] % 2}" >
+                          
+                      <td [ttEditableColumn]="rowData.Items"  [ttEditableColumnField]="rowData.Items" (click)="onClicked(rowData)">
+                        
+                            <p-treeTableCellEditor>
+                              <ng-template pTemplate="input">
+                                  <input pInputText type="text" [(ngModel)]="rowData['Items']" >
+                              </ng-template>
+                              <ng-template pTemplate="output">{{rowData['Items']}}</ng-template>
+                          </p-treeTableCellEditor>
+                            
+                        </td>
+                        <td [ttEditableColumn]="rowData.Price" [ttEditableColumnField]="rowData.Price" (click)="onClicked(rowData)">
+                          
+                            <p-treeTableCellEditor>
+                              <ng-template pTemplate="input">
+                                  <input pInputText type="text" [(ngModel)]="rowData['Price']" >
+                              </ng-template>
+                              <ng-template pTemplate="output">{{rowData['Price']}}</ng-template>
+                          </p-treeTableCellEditor>
+                          
+                          
+                        </td>
+                        <!-- <td [ngStyle]="{'width':'90px'}">{{rowData.UnitOfMeasure}}</td> -->
+                        <td [ttEditableColumn]="rowData.UnitOfMeasure" [ttEditableColumnField]="rowData.UnitOfMeasure" (click)="onClicked(rowData)">
+                          
+                            <p-treeTableCellEditor>
+                              <ng-template pTemplate="input">
+                                  <input pInputText type="text" [(ngModel)]="rowData['UnitOfMeasure']" >
+                              </ng-template>
+                              <ng-template pTemplate="output">{{rowData['UnitOfMeasure']}}</ng-template>
+                          </p-treeTableCellEditor>
+                          
+                          
+                          
+                        </td>
+                        <td [ttEditableColumn]="rowData.MinQuantity" [ttEditableColumnField]="rowData.MinQuantity" (click)="onClicked(rowData)">
+                          
+                            <p-treeTableCellEditor>
+                              <ng-template pTemplate="input">
+                                  <input pInputText type="text" [(ngModel)]="rowData['MinQuantity']" >
+                              </ng-template>
+                              <ng-template pTemplate="output">{{rowData['MinQuantity']}}</ng-template>
+                          </p-treeTableCellEditor>
+                          
+                          
+                          
+                        </td>
+                        <!-- <td [ttEditableColumn]="rowData.Quantity" [ttEditableColumnField]="rowData.Quantity" (click)="onClicked(rowData)" >
+                          <p-treeTableCellEditor>
+                            <ng-template pTemplate="input">
+                                <input pInputText type="text" [(ngModel)]="rowData['Quantity']">
+                            </ng-template>
+                            <ng-template pTemplate="output">{{rowData['Quantity']}}</ng-template>
+                          </p-treeTableCellEditor>
+                          
+                        </td> -->
+                        
+                        <td [ttEditableColumn]="rowData.Bath1" [ttEditableColumnField]="rowData.Bath1" (click)="onClicked(rowData)" >
+                          <p-treeTableCellEditor>
+                            <ng-template pTemplate="input">
+                                <input pInputText type="text" [(ngModel)]="rowData['Bath1']">
+                            </ng-template>
+                            <ng-template pTemplate="output">{{rowData['Bath1']}}</ng-template>
+                          </p-treeTableCellEditor>
+                          
+                        </td>
+                        <td [ttEditableColumn]="rowData.Bath2" [ttEditableColumnField]="rowData.Bath2" (click)="onClicked(rowData)" >
+                          <p-treeTableCellEditor>
+                            <ng-template pTemplate="input">
+                                <input pInputText type="text" [(ngModel)]="rowData['Bath2']">
+                            </ng-template>
+                            <ng-template pTemplate="output">{{rowData['Bath2']}}</ng-template>
+                          </p-treeTableCellEditor>
+                          
+                        </td>
+                        <td [ttEditableColumn]="rowData.NoteForRep" [ttEditableColumnField]="rowData.NoteForRep" (click)="onClicked(rowData)" >
+                          <p-treeTableCellEditor>
+                            <ng-template pTemplate="input">
+                                <input pInputText type="text" [(ngModel)]="rowData['NoteForRep']">
+                            </ng-template>
+                            <ng-template pTemplate="output">{{rowData['NoteForRep']}}</ng-template>
+                          </p-treeTableCellEditor>
+                          
+                        </td>
+                        
+                        <td >
+                          {{rowData['FinalPrice']}}
+                          
+                        </td>
+                        <td [ttEditableColumn]="rowData.Discount" [ttEditableColumnField]="rowData.Discount" (click)="onClicked(rowData)" >
+                          <p-treeTableCellEditor>
+                            <ng-template pTemplate="input">
+                                <input pInputText type="text" [(ngModel)]="rowData['Discount']">
+                            </ng-template>
+                            <ng-template pTemplate="output">{{rowData['Discount']}}</ng-template>
+                          </p-treeTableCellEditor>
+                          
+                        </td>
+                        <td >
+                          {{rowData['DiscountedPrice']}}
+                          
+                        </td> 
+                        <!-- <td [ttEditableColumn]="rowData.Misc" [ttEditableColumnField]="rowData.Misc" (click)="onClicked(rowData)" [ngStyle]="{'border': rowData.ParentID == '' ? 'none' : '1px solid black' }">
+                          <p-treeTableCellEditor>
+                            <ng-template pTemplate="input">
+                                <input pInputText type="text" [(ngModel)]="rowData['Misc']">
+                            </ng-template>
+                            <ng-template pTemplate="output">{{rowData['Misc']}}</ng-template>
+                          </p-treeTableCellEditor>
+                          
+                        </td> -->
+                    </tr>
+                  </ng-template>
+              </p-treeTable>
+           
+          </div>
+      </div>
+  </div>
+  <div class="table_footer text-right">
+    <button class="btn btn-danger mr-3" (click)="next()" mat-button>Finalize</button>
+    <button class="btn btn-outline-danger  mr-3" (click)="clearWetArea()" >&nbsp;&nbsp; Clear &nbsp;&nbsp;</button>
+    <button class="btn btn-outline-danger  mr-3" (click)="cancel()" mat-button>Cancel</button>
+</div>
+</section>

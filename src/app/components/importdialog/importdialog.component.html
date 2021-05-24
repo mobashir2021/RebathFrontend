@@ -1,0 +1,70 @@
+<!-- <button class="close buttoncolor" mat-button (click)="onNoClick()">X</button> -->
+<div class=" custommodal">
+    <form>
+        <div class="form-group">
+        <p-fileUpload  name="file" multiple="multiple" [showUploadButton]="false" [showCancelButton]="false" customUpload="true"
+        maxFileSize="1120000" accept=".xlsx" styleClass="btnbrowse" (onUpload)="onUpload($event)" chooseLabel="Browse">
+        <!-- <ng-template pTemplate="content">
+        <div   *ngFor="let file of uploadedFiles; let i = index;">
+        <div style="width: 100%;"><p>{{file.name}}</p>
+        </div>
+        <div class="uploaded-file" (click)="uploadService.downloadFile(attachments, i)">
+        {{file.uploadname}}</div>
+        <div>
+        <button type="button" class="btn-xs btn-danger confirm-btn"
+        >Delete</button>
+        </div>
+        </div>
+        </ng-template> -->
+        </p-fileUpload>
+        </div>
+        <br/>
+        <div class="p-fileupload-row"   *ngFor="let file of uploadedFiles; let i = index;">
+            <div style="width: 100%;"><p>{{file.name}}</p>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row" style="position: relative; bottom: 0;">
+                <div class="col-md-6">
+    
+                </div>
+                <div class="col-md-2">
+                    <input class="btn btn-danger" type="submit" value="Submit"/> 
+                </div>
+                <div class="col-md-2">
+                    <input class="btn btn-danger" type="submit" value="Cancel"/> 
+                </div>
+            </div>
+        </div>
+        
+        </form>
+        
+    <!-- <div class="content-section implementation">
+        
+            <h5>Import</h5>
+            <br />
+            <p-fileUpload  mode="basic" name="demo[]"  accept=".xlsx" maxFileSize="1000000" showUploadButton=false
+            (onUpload)="onUpload($event)" [auto]="false" chooseLabel="Browse" styleClass="btnbrowse"></p-fileUpload>
+            <br/>
+            <div style="width: 90%; height: 90px; border: 1px solid black;">
+                <ul *ngIf="this.uploadedFiles.length" styleClass="ulclass">
+                    <li styleClass="liclass" *ngFor="let file of this.uploadedFiles">{{file}}</li>
+                </ul>
+                
+            </div>
+            <p-fileUpload name="demo[]"  (onUpload)="onUpload($event)"
+                    multiple="multiple" accept=".xlsx" maxFileSize="1000000">
+                    <ng-template pTemplate="content">
+                        <ul *ngIf="uploadedFiles.length" styleClass="ulclass">
+                            <li *ngFor="let file of uploadedFiles">{{file.name}}</li>
+                        </ul>
+                    </ng-template>
+            </p-fileUpload>
+        
+    </div> -->
+
+    
+    
+</div>
+
+

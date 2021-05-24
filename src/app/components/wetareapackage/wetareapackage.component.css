@@ -1,0 +1,73 @@
+@media all and (min-width: 768px) {
+    tr td {
+        vertical-align: middle !important;
+    }
+    tr span:not([class]) {
+        padding: 1rem 1rem;
+    }
+}
+
+::ng-deep .row-accessories {
+    background-color: #C8C4C1 !important;
+}
+
+::ng-deep .pi-chevron-right::before {
+    color: black;
+}
+
+::ng-deep .pi-chevron-down::before {
+    color: black;
+}
+
+.btn-danger,
+.btn-danger:hover,
+.btn-danger:active,
+.btn-danger:visited {
+    /* background-color: #013d33 !important; */
+}
+
+.botom {
+    height: 100px;
+    background-color: rgb(238, 238, 238);
+    box-shadow: 9px 9px 8px 9px rgb(120, 120, 120, 1), 9px 8px 8px 9px rgba(120, 120, 120, 1), 9px 8px 9px 9px rgba(120, 120, 120, 1);
+}
+
+td {
+    border: 0.5px solid #969696;
+}
+
+.maindiv {
+    width: 90%;
+    height: 100vh;
+    background-color: rgb(242, 242, 242);
+}
+
+.matcardclass {
+    background-color: rgb(250, 250, 250);
+    color: black;
+    padding: 0px;
+}
+
+.imgclass {
+    width: 90%;
+    height: 55vh;
+}
+
+.leftbutton {
+    text-align: center;
+}
+
+.rightbutton {
+    text-align: center;
+}
+
+.matbut {
+    background-color: crimson;
+    color: whitesmoke;
+    font-size: 28px;
+    border: none;
+}
+
+.matbutfile {
+    border: none;
+}
